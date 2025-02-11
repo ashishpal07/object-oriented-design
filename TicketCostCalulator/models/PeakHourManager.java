@@ -22,18 +22,11 @@ public class PeakHourManager {
         return instance;
     }
 
-    public boolean isPeakHour(LocalTime time) {
-        return peakHourManagerList.stream().anyMatch(timeRange -> timeRange.isWithinRange(time));
-    }
-
     public long getPeakMinutes(LocalTime startTime, LocalTime endTime, DayOfWeek day) {
-        System.out.println("get peak minutes called.");
         if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
             return 0;
         }
         peakHourManagerList.sort((Time a, Time b) -> a.getStart().compareTo(b.getStart()));
-
-        System.out.println("peakHourList = " + peakHourManagerList);
 
         long peakMinutes = 0;
         for (Time peakTime: peakHourManagerList) {

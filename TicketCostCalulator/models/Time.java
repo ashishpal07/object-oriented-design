@@ -26,8 +26,4 @@ public class Time {
   public void setEnd(LocalTime end) {
     this.end = end;
   }
-
-  public boolean isWithinRange(LocalTime time) {
-    return !time.isBefore(start) && !time.isAfter(end);
-  }
 }

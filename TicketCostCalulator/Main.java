@@ -5,9 +5,8 @@ import java.time.LocalTime;
 
 public class Main {
   public static void main(String[] args) {
-    Time travelTime = new Time(LocalTime.of(12, 0), LocalTime.of(22, 0));
+    Time travelTime = new Time(LocalTime.of(17, 0), LocalTime.of(22, 0));
     User user = new User("Abc", "salesforce@gmail.com");
-    PeakHourManager peakHourManager = PeakHourManager.getInstance();
     BusType busType = BusType.Economy;
     DayOfWeek day = DayOfWeek.FRIDAY;
 
@@ -20,11 +19,11 @@ public class Main {
 }
 
 
-/**
+/*
 *
 Design a ticketing cost calculator for a bus service.
 
-There are three types of services available - Economy, Comfort, and Premium. Below are the details along with the pricing scheme 
+There are three types of services available - Economy, Comfort, and Premium. Below are the details along with the pricing scheme
 for all three types in peak and off-peak hours:
 
 Type	   Peak hours (per hour)	Off-peak hours (per hour)
